@@ -9,7 +9,7 @@ def subtitle_audio(file):
     transcribe = model.transcribe(audio=file)
     segments = transcribe['segments']
 
-    with open('subtitles.txt', 'w', encoding='utf-8') as f:
+    with open('subtitles.srt', 'w', encoding='utf-8') as f:
         for segment in segments:
             startTime = str(0)+str(timedelta(seconds=int(segment['start'])))+',000'
             endTime = str(0)+str(timedelta(seconds=int(segment['end'])))+',000'
